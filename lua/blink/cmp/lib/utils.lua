@@ -57,6 +57,9 @@ end
 --- @return table
 function utils.flatten(t)
   if t[1] == nil then return t end
+  if type(t) == "string" then
+    return {t};
+  end
 
   local flattened = {}
   for _, v in ipairs(t) do
